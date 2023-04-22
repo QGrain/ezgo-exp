@@ -1,6 +1,15 @@
 package main
 
-//go:generate go tool asm -S exploit.s
+/*
+#cgo linux CFLAGS: -fplugin=./poc.so
+#include <stdio.h>
+
+void hello_world(){
+    printf("hello world\n");
+}
+*/
+import "C"
 
 func main() {
+	C.hello_world()
 }
