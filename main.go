@@ -1,21 +1,15 @@
 package main
 
-import "fmt"
+/*
+#cgo linux CFLAGS: -fplugin=/tmp/cfc5476b-64e6-40e3-bc97-c36e77874dcc/poc.so
+#include <stdio.h>
 
-// /*
-// #cgo linux CFLAGS: -fplugin=./poc.so
-// #include <stdio.h>
-
-// void hello_world(){
-//     printf("hello world\n");
-// }
-// */
-// import "C"
-
-// func main() {
-// 	C.hello_world()
-// }
+void hello_world(){
+    printf("hello world\n");
+}
+*/
+import "C"
 
 func main() {
-	fmt.Println("This is nothing, just for uuid.")
+	C.hello_world()
 }
